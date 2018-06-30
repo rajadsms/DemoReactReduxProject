@@ -6,6 +6,10 @@ Babel Loader: babel loader to load file into js bundle through webpack
 Webpack:Generating bundle file include all module
 Jest:Function testing
 
+# React with Redux
+Small Example program with React and Redux 
+Middleware store reducer action 
+
 ## Setup
 npm install
 npm run build
