@@ -6,7 +6,7 @@ const moduleObj = {
     loaders: [
         {
             test: /\.js$/,
-            exclude: /node_modules/,
+            exclude: [/node_modules/, /\.ejs$/],  
             loaders: ["babel-loader"],
         }
     ],

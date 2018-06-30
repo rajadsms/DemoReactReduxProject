@@ -17,8 +17,10 @@
   "dependencies": {
     "express": "^4.16.3",
     "jest": "^23.1.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "15.3.1",
+    "react-dom": "15.2.0",
+    "react-redux": "4.4.5",
+    "redux": "3.5.2",
     "rimraf": "^2.6.2",
     "webpack": "^3.12.0"
   },
