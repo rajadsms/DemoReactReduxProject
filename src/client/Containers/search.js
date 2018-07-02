@@ -1,15 +1,23 @@
 import React  from 'react';
 import {connect}  from 'react-redux';
 import {makeAjaxCall} from '../Actions/flightAction';
+import SearchComponent from '../Components/search';
+import ListComponent from '../Components/dataList'
 
 class Search extends React.Component{
     constructor(props) 
     {
       super(props);  
+      this.state={objectTOrender:[]};
+      
+    }
+    componentDidMount(){
+      this.onHit();
     }
     componentWillReceiveProps(nextProps){
       console.log(this.props.flightData);
     }
+    
     onHit(){
       let formdata={}
           let queryData={
@@ -20,16 +28,32 @@ class Search extends React.Component{
                   'accept':'application/json',
                   'formdata':formdata
               }
-          this.props.makeAjaxCall(queryData);
+      this.props.makeAjaxCall(queryData);
+    }
+
+    _onclickHit(e,inputData){
+      let finalObj=[];
+      this.props.flightData.map({function(obj){
+        if(obj.source==inputData.fromDest && obj.destination==inputData.toDest){
+          finalObj.push(obj);
+        }
+      }})
+this.setState({'objectTOrender':finalObj});
     }
     
   render()
   {
+
     return (
+      <div>
             <div>
           Search Page
-          <button onClick={this.onHit.bind(this)}>ClickMe</button>
+          <SearchComponent onClickSearch={this._onclickHit.bind(this)}/>
             </div>
+            <div>
+        <ListComponent data={this.state.objectTOrender}/>
+              </div>
+              </div>
             );
   }
 };
