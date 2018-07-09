@@ -1,17 +1,11 @@
 /**
  * Importing required modules
  */
-
-// Importing third party libraries
-
 import React  from 'react'; 
 import ReactDOM  from 'react-dom';
 import { Provider } from 'react-redux'; 
 import App from './app';
-
-// Import redux modal
-
-// Importing our own libraries
+//import './main.scss';
 
 import configureStore from './Store';
  

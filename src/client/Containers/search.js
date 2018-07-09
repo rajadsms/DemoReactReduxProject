@@ -21,7 +21,7 @@ class Search extends React.Component{
     onHit(){
       let formdata={}
           let queryData={
-                  'url':'https://api.myjson.com/bins/hfeym',
+                  'url':'https://api.myjson.com/bins/nh1p6',
                   'method':'GET',
                   'cause':'FLIGHT_DATA',
                   'contentType':'application/json',
@@ -31,13 +31,16 @@ class Search extends React.Component{
       this.props.makeAjaxCall(queryData);
     }
 
-    _onclickHit(e,inputData){
+    _onclickHit(inputData){
+      let dataToCheck=inputData[0];
       let finalObj=[];
-      this.props.flightData.map({function(obj){
-        if(obj.source==inputData.fromDest && obj.destination==inputData.toDest){
+      this.props.flightData.map(function(obj){
+        if(obj.source==dataToCheck.fromDest && obj.destination==dataToCheck.toDest
+        ){
           finalObj.push(obj);
         }
-      }})
+      })
+    
 this.setState({'objectTOrender':finalObj});
     }
     
@@ -51,7 +54,7 @@ this.setState({'objectTOrender':finalObj});
           <SearchComponent onClickSearch={this._onclickHit.bind(this)}/>
             </div>
             <div>
-        <ListComponent data={this.state.objectTOrender}/>
+        <ListComponent dataArray={this.state.objectTOrender}/>
               </div>
               </div>
             );
