@@ -23,7 +23,7 @@ this.props.onClickSearch(inputData);
                
                    <div style={{'border':'1px solid Black' }}>
 
-                       <div style={{'padding':'5px'}}>
+                       <div style={{'padding':'5px'}}><span>Source: </span>
                     <select  ref={node => { this.fromDest = node}}>
                         <option value="kolkata">Kolkata</option>
                         <option value="delhi">Delhi</option>
@@ -31,7 +31,7 @@ this.props.onClickSearch(inputData);
                         <option value="bangalore">Bangalore</option>
                     </select>
               </div>
-              <div style={{'padding':'5px'}}>
+              <div style={{'padding':'5px'}}><span>Destination: </span>
                     <select ref={node => { this.toDest = node }}>
                         <option value="kolkata">Kolkata</option>
                         <option value="delhi">Delhi</option>

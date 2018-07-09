@@ -21,7 +21,7 @@ class Search extends React.Component{
     onHit(){
       let formdata={}
           let queryData={
-                  'url':'https://api.myjson.com/bins/nh1p6',
+                  'url':'https://api.myjson.com/bins/w1ot6',
                   'method':'GET',
                   'cause':'FLIGHT_DATA',
                   'contentType':'application/json',

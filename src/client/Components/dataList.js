@@ -9,14 +9,14 @@ class ListComponent extends React.Component {
         let htmlChunk=[];
         dataArray.map(function(obj){
                htmlChunk.push(<div style={{'border':'1px solid black','padding':'5px'}}>
-                <div>{obj.price}</div>
-               <div>{obj.name}</div>
-               <div>{obj.no}</div>
-               <div>{obj.source}</div>
-               <div>{obj.destination}</div>
+                <div>Price:{obj.price}</div>
+               <div>Name:{obj.name}</div>
+               <div>No:{obj.no}</div>
+               <div>Source:{obj.source}</div>
+               <div>Destination:{obj.destination}</div>
                <div>Depart:{obj.departureTime}</div>
                <div>Arrive:{obj.arriveTime}</div>
-               <div>{obj.seat_left}</div>
+               <div>Seats Left:{obj.seat_left}</div>
                </div>
             );
         }
